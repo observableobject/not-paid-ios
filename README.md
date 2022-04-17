@@ -28,47 +28,49 @@ If you prefer not to use any of the Swift pacakage manager, you can simply copy 
 
 ## Usage
 
-1. 
+1. Import the package. 
 ````
-    import NotPaid
+import NotPaid
 ````
 
-2. 
-
-Create a `NotPaidSettings` object, passing in a `dueDate` and a `deadline` (default is 60 days) in your `App` file or root `View`. 
+2. Create a `NotPaidSettings` object, passing in a `dueDate` and a `deadline` (default is 60 days) in your `App` file or root `View`. 
 
 ````
-    let settings = NotPaidSettings(dueDate: Date() + 30 * 86400, deadline: 60)
+let settings = NotPaidSettings(dueDate: Date() + 30 * 86400, deadline: 60)
 ````
 
 3. Use the `.environmentObject(_ object:)` modifier to apply your settings to the environment. 
 
 ````
-        var body: some Scene {
-        WindowGroup {
-            ContentView().environmentObject(settings)
-        }
+var body: some Scene {
+    WindowGroup {
+        ContentView().environmentObject(settings)
     }
+}
 ````
 
-4. Apply `NotPaid` using `.notPaid()` on any `View`.  `NotPaid` will modify the `View` `opacity` to the appropriate level. 
+4. Apply `NotPaid` using `.notPaid()` on any `View`.  `NotPaid` will modify the `opacity` to the appropriate level. 
 
 ````
-        VStack {
-            Text("Hello, world!")
-            Image(systemName: "person.fill").frame(width: 100, height: 100, alignment: .center)
-        }
-        .notPaid()
+VStack{
+    Text("Hello, world!")
+    Image(systemName: "person.fill").frame(width: 100, height: 100, alignment: .center)
+}
+.notPaid()
 ````
  
 ## Acknowledgements 
 
 Based on the original Javascript implementation by [@kleampa](https://github.com/kleampa/not-paid).
+
 A Wordpress plugin is also available [here](https://github.com/SurfEdge/not-paid-wp).
+
 There's also an Android version available [here](https://github.com/theapache64/faded).
+
 There's also an Windows Forms version available [here](https://github.com/g-otn/winforms-not-paid).
+
 Flutter version available [here](https://github.com/krishnakumarcn/faded).
 
 ## Author
 
-Inspired from twitter (@riklomas) Made by Vincent Frascello (@vfrascello), USA
+Inspired from twitter (@riklomas) Made by Vincent Frascello ([@vfrascello](https://github.com/vfrascello)), USA
