@@ -29,35 +29,36 @@ If you prefer not to use any of the Swift pacakage manager, you can simply copy 
 ## Usage
 
 1. Import the package. 
-````
+```
 import NotPaid
-````
+```
 
 2. Create a `NotPaidSettings` object, passing in a `dueDate` and a `deadline` (default is 60 days) in your `App` file or root `View`. 
 
-````
-let settings = NotPaidSettings(dueDate: Date() + 30 * 86400, deadline: 60)
-````
+```
+let settings = NotPaidSettings(dueDate: yourDueDate, deadline: yourDeadline)
+```
+where `yourDueDate` is a `Date` object and `yourDeadline` is an `Int` representing the number of days after due date until zero opacity.
 
 3. Use the `.environmentObject(_ object:)` modifier to apply your settings to the environment. 
 
-````
+```
 var body: some Scene {
     WindowGroup {
         ContentView().environmentObject(settings)
     }
 }
-````
+```
 
 4. Apply `NotPaid` using `.notPaid()` on any `View`.  `NotPaid` will modify the `opacity` to the appropriate level. 
 
-````
+```
 VStack{
     Text("Hello, world!")
     Image(systemName: "person.fill").frame(width: 100, height: 100, alignment: .center)
 }
 .notPaid()
-````
+```
  
 ## Acknowledgements 
 
