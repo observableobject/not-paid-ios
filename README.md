@@ -55,10 +55,12 @@ var body: some Scene {
 ```
 VStack{
     Text("Hello, world!")
-    Image(systemName: "person.fill").frame(width: 100, height: 100, alignment: .center)
+    Image(systemName: "person.fill")
 }
 .notPaid()
 ```
+
+P.S. If you want the ability to remotely enable/disable `NotPaid`, you can adjust `settings.isActive` to your remote configuration of choice. 
  
 ## Acknowledgements 
 
