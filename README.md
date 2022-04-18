@@ -38,7 +38,7 @@ import NotPaid
 ```
 let settings = NotPaidSettings(dueDate: yourDueDate, deadline: yourDeadline)
 ```
-where yourDueDate is a `Date` object and `yourDeadline` is an `Int` representing the number of days after due date until zero opacity.
+where `yourDueDate` is a `Date` object and `yourDeadline` is an `Int` representing the number of days after due date until zero opacity.
 
 3. Use the `.environmentObject(_ object:)` modifier to apply your settings to the environment. 
 
